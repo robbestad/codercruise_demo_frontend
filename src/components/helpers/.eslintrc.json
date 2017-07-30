@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "no-extend-native": "off",
+    "no-param-reassign": "off",
+    "no-bitwise": "off",
+    "prefer-template": "off",
+    "global-require": "off"
+  }
+}

@@ -1,0 +1,53 @@
+/* shared/typography.css */
+:root {
+    --line-height: 1.5;
+
+    --font-regular-family: 'Fira Sans', sans-serif;
+    --font-regular-weight: 400;
+    --font-regular-style: normal;
+
+    --font-extrabold-family: 'Fira Sans', sans-serif;
+    --font-extrabold-weight: 700;
+    --font-extrabold-style: normal;
+}
+
+.font-style-extra-bold {
+    font-weight: var(--font-extrabold-weight);
+    font-family: var(--font-extrabold-family);
+    font-style: var(--font-extrabold-style);
+}
+
+.font-style-regular {
+    font-weight: var(--font-regular-weight);
+    font-family: var(--font-regular-family);
+    font-style: var(--font-regular-style);
+}
+
+.italic {
+    font-style: italic;
+}
+
+.font-size-small {
+    font-size: 14px;
+}
+
+.font-size-l {
+    font-size: 22px;
+}
+
+.font-size-xl {
+    font-size: 28px;
+}
+
+.font-size-xxl {
+    font-size: 36px;
+}
+
+html,
+body {
+    line-height: var(--line-height);
+    font-weight: var(--font-regular-weight);
+    font-family: var(--font-regular-family);
+    color: var(--content-bg);
+    font-size: 16px;
+}

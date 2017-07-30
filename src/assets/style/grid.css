@@ -1,0 +1,192 @@
+/* Base
+---------------------------------------------------------------- */
+html {
+    cursor: default;
+    font: 100%/1.5 'LFT Etica', 'Helvetica Neue', Arial, sans-serif;
+    text-size-adjust: 100%;           /* Mobile font size */
+    font-feature-settings: "liga" 0;  /* Prevent ligatures */
+    text-rendering: optimizeSpeed;    /* Prevent ligatures */
+    -webkit-tap-highlight-color: transparent;
+}
+body, img, svg, a { margin: 0; border: 0; color: inherit; fill: currentColor }
+button, select, a, input, label, textarea { touch-action: manipulation } /* FastClick */
+button, select { cursor: pointer }
+
+
+/* Fonts
+---------------------------------------------------------------- */
+/*@font-face { font-family: 'NRK Etica Slab'; font-weight: 700; font-style: normal; src: url('./fonts/NRK_Etica_Slab_Bold.woff') format('woff'), url('./fonts/NRK_Etica_Slab_Bold.woff2') format('woff2') }*/
+/*@font-face { font-family: 'NRK Etica Slab'; font-weight: 400; font-style: normal; src: url('./fonts/NRK_Etica_Slab_Book.woff') format('woff'), url('./fonts/NRK_Etica_Slab_Book.woff2') format('woff2') }*/
+
+/*@font-face { font-family: 'LFT Etica'; font-weight: 400; font-style: italic; src: url('./fonts/LFT_Etica_Book_Italic.woff') format('woff'), url('./fonts/LFT_Etica_Book_Italic.woff2') format('woff2') }*/
+/*@font-face { font-family: 'LFT Etica'; font-weight: 500; font-style: italic; src: url('./fonts/LFT_Etica_Italic.woff') format('woff'), url('./fonts/LFT_Etica_Italic.woff2') format('woff2') }*/
+/*@font-face { font-family: 'LFT Etica'; font-weight: 600; font-style: italic; src: url('./fonts/LFT_Etica_Semibold_Italic.woff') format('woff'), url('./fonts/LFT_Etica_Semibold_Italic.woff2') format('woff2') }*/
+/*@font-face { font-family: 'LFT Etica'; font-weight: 700; font-style: italic; src: url('./fonts/LFT_Etica_Bold_Italic.woff') format('woff'), url('./fonts/LFT_Etica_Bold_Italic.woff2') format('woff2') }*/
+/*@font-face { font-family: 'LFT Etica'; font-weight: 800; font-style: italic; src: url('./fonts/LFT_Etica_Extrabold_Italic.woff') format('woff'), url('./fonts/LFT_Etica_Extrabold_Italic.woff2') format('woff2') }*/
+
+/*@font-face { font-family: 'LFT Etica'; font-weight: 400; font-style: normal; src: url('./fonts/LFT_Etica_Book.woff') format('woff'), url('./fonts/LFT_Etica_Book.woff2') format('woff2') }*/
+/*@font-face { font-family: 'LFT Etica'; font-weight: 500; font-style: normal; src: url('./fonts/LFT_Etica_Regular.woff') format('woff'), url('./fonts/LFT_Etica_Regular.woff2') format('woff2') }*/
+/*@font-face { font-family: 'LFT Etica'; font-weight: 600; font-style: normal; src: url('./fonts/LFT_Etica_Semibold.woff') format('woff'), url('./fonts/LFT_Etica_Semibold.woff2') format('woff2') }*/
+/*@font-face { font-family: 'LFT Etica'; font-weight: 700; font-style: normal; src: url('./fonts/LFT_Etica_Bold.woff') format('woff'), url('./fonts/LFT_Etica_Bold.woff2') format('woff2') }*/
+/*@font-face { font-family: 'LFT Etica'; font-weight: 800; font-style: normal; src: url('./fonts/LFT_Etica_Extrabold.woff') format('woff'), url('./fonts/LFT_Etica_Extrabold.woff2') format('woff2') }*/
+
+/* Grid
+---------------------------------------------------------------- */
+.g-grid.g-grid { /* Double selector ensures grid nestability */
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0;
+}
+.g-grid > * {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1rem;
+}
+
+
+/* Button
+---------------------------------------------------------------- */
+.g-button::-moz-focus-inner { border: 0; padding: 0 } /* Reset Firefox */
+.g-button {
+    -webkit-appearance: none; /* Reset iOS */
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+    margin: 3px 1px;
+    padding: 0 19px;
+    border: 0 solid;          /* Set solid style for psuedo inheritance */
+    border-radius: 99px;
+    height: 41px;
+    min-width: 41px;          /* Ensure minimum touch target */
+    font: inherit;
+    font-size: 14px;
+    line-height: 41px;
+    text-align: center;
+    text-decoration: none;
+    background: transparent;
+    color: inherit;
+    transition: .2s;
+}
+.g-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: .4;            /* g-color-shade-4 is 78% luminosity, which equals 22% darkness */
+    border: inherit;        /* Enable changing border without addressing pseudo element */
+    border-radius: inherit; /* Enable changing border-radius without addressing pseudo element */
+    border-width: 1px;
+}
+.g-button:active { transform: scale(.95) }
+.g-button:hover,
+.g-button:focus { outline: 0; border-color: transparent; box-shadow: 0 0 2px 1px #00b9f2 }
+.g-button:disabled,
+.g-button.is-disabled {
+    cursor: default;
+    pointer-events: none;
+    box-shadow: none;
+    opacity: .6;
+}
+.g-button.is-busy::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 14px;
+    height: 14px;
+    border: 1px solid;
+    border-top-color: transparent;
+    border-radius: 50%;
+    margin-right: 5px;
+    animation: g-spin 1s infinite linear;
+}
+.g-button svg { vertical-align: middle }  /* Align with text */
+.g-button--o {
+    width: 41px;
+    height: 41px;
+    padding: 10px;
+}
+.g-button--o svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.g-spin { animation: g-spin 1s infinite linear }
+@keyframes g-spin { to { transform: rotate(360deg) } }
+
+
+
+/* Pagination
+---------------------------------------------------------------- */
+.g-pagination { overflow: hidden; white-space: nowrap; text-align: center; font-size: 0 }
+.g-pagination::before,
+.g-pagination::after { content: ''; display: inline-block; width: 50%; border-top: 1px solid; opacity: .22 }
+.g-pagination::before { margin-left: -50% }
+.g-pagination::after { margin-right: -50% }
+.g-pagination > .g-button:only-child { width: 100%; max-width: 200px }
+.g-pagination > .g-button:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: 0;
+}
+.g-pagination > .g-button + .g-button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left-style: none;
+    margin-left: 0;
+}
+
+
+/* Sizes
+---------------------------------------------------------------- */
+.g-xs-100 { width: 100vw; margin-left: calc(50% - 50vw) }
+.g-xs-1 { width:8.33333% } .g-xs-2 { width:16.6666% } .g-xs-3 { width:25%}
+.g-xs-4 { width:33.3333% } .g-xs-5 { width:41.6666% } .g-xs-6 { width:50%}
+.g-xs-7 { width:58.3333% } .g-xs-8 { width:66.6666% } .g-xs-9 { width:75%}
+.g-xs-10 { width:83.3333% } .g-xs-11 { width:91.6666% } .g-xs-12 { width:100%}
+@media (min-width: 640px) {
+    .g-sm-1 { width:8.33333% } .g-sm-2 { width:16.6666% } .g-sm-3 { width:25%}
+    .g-sm-4 { width:33.3333% } .g-sm-5 { width:41.6666% } .g-sm-6 { width:50%}
+    .g-sm-7 { width:58.3333% } .g-sm-8 { width:66.6666% } .g-sm-9 { width:75%}
+    .g-sm-10 { width:83.3333% } .g-sm-11 { width:91.6666% } .g-sm-12 { width:100%}
+}
+@media (min-width: 720px) {
+    .g-md-1 { width:8.33333% } .g-md-2 { width:16.6666% } .g-md-3 { width:25%}
+    .g-md-4 { width:33.3333% } .g-md-5 { width:41.6666% } .g-md-6 { width:50%}
+    .g-md-7 { width:58.3333% } .g-md-8 { width:66.6666% } .g-md-9 { width:75%}
+    .g-md-10 { width:83.3333% } .g-md-11 { width:91.6666% } .g-md-12 { width:100%}
+}
+@media (min-width: 990px) {
+    .g-lg-1 { width:8.33333% } .g-lg-2 { width:16.6666% } .g-lg-3 { width:25%}
+    .g-lg-4 { width:33.3333% } .g-lg-5 { width:41.6666% } .g-lg-6 { width:50%}
+    .g-lg-7 { width:58.3333% } .g-lg-8 { width:66.6666% } .g-lg-9 { width:75%}
+    .g-lg-10 { width:83.3333% } .g-lg-11 { width:91.6666% } .g-lg-12 { width:100%}
+}
+
+
+/* Colors
+---------------------------------------------------------------- */
+.g-color-base { color: #26292a; background-color: #fff }
+.g-color-spot { color: #26292a; background-color: #00b9f2 }
+.g-color-invert { color: #fff; background-color: #141517 }
+.g-color-shade-1 { color: #26292a; background-color: #f3f3f3 }
+.g-color-shade-2 { color: #26292a; background-color: #e9e9e9 }
+.g-color-shade-3 { color: #26292a; background-color: #e0e0e0 }
+.g-color-shade-4 { color: #26292a; background-color: #c8c8c8 }
+.g-fade { opacity: .4 }
+
+
+/* Accessibility
+---------------------------------------------------------------- */
+.g-sr, .g-sr-focus:not(:focus) {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    clip: rect(0, 0, 0, 0);
+}

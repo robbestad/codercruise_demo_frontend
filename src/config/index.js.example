@@ -1,0 +1,19 @@
+const path = require("path");
+module.exports = {
+  title:   "Codercruise PWA",
+  http:    {
+    port:    process.env.PORT || 1998,
+    favicon: path.join(__dirname, "..", "..", "assets/favicon.ico"),
+    static:  {
+      "/build": path.join(__dirname, "../../build"),
+      "/":      path.join(__dirname, "./static")
+    }
+  },
+  server:  {
+    SSR: false // Server side rendering
+  },
+  session: {
+    secret:  "REPLACE THIS SECRET WITH A BETTER ONE",
+    expires: 2 * 3600 * 1000 // 2 hours
+  }
+}

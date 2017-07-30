@@ -1,0 +1,10 @@
+/*@font-face {*/
+    /*font-family: 'Space Mono';*/
+    /*src:  url('/assets/fonts/SpaceMono-Bold.woff2') format('woff2'),*/
+    /*url('/assets/fonts/SpaceMono-Bold.woff') format('woff');*/
+/*}*/
+@font-face {
+    font-family: 'Fira Sans';
+    src:  url('/assets/fonts/FiraSans-Regular.woff2') format('woff2'),
+    url('/assets/fonts/FiraSans-Regular.woff') format('woff');
+}

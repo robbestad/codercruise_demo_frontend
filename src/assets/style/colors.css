@@ -1,0 +1,13 @@
+/* shared/typography.css */
+:root {
+    --background-color-dark: #34495e;
+    --menu-link-color: #f1c40f;
+    --body-bg: #ffffff;
+    --content-bg: #00487E;
+    --content-sub-bg: #10569C;
+    --content-border: 1px solid #00487E;
+    --content-bg-dark: #eaeaea;
+    --font-light: #fefefe;
+    --font-color-alternate: #E6575A;
+    --font-color-main: #34495e;
+}

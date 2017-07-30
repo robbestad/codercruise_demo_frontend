@@ -1,0 +1,139 @@
+/* Shared */
+@import "./grid.css";
+@import "./fonts.css";
+@import "./colors.css";
+@import "./typography.css";
+@import "./edit.css";
+@import "./animations.css";
+
+.grid {
+    background: var(--body-bg);
+}
+
+.image-grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    background-color: #fff;
+    color: #444;
+    margin-left: 10px;
+    width: calc(100% - 20px);
+}
+
+.image-box {
+    padding-top: 20px;
+}
+
+/*.image-box:nth-child(even) {*/
+/*background-color: #ccc;*/
+/*color: #000;*/
+/*}*/
+
+html,
+body {
+    background: var(--body-bg);
+    color: var(--font-color-main);
+    animation: fadeIn 0.5s linear;
+    animation-fill-mode: forwards;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: calc(100% - 0px);
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    flex: 1;
+}
+
+.wrapper {
+    padding: 10px;
+    background: #7BCCDC;
+    color: #FBF6E4;
+}
+
+.wrapper .inner {
+    border: var(--content-border);
+}
+
+.inner {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 10px 0 0 0;
+    text-align: center;
+}
+
+.inner-left {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 10px 0 0 10px;
+}
+
+.section {
+    background-color: var(--content-bg);
+    text-align: center;
+    border: none;
+}
+
+a, a:focus, a:hover {
+    color: var(--font-color-main);
+}
+
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-list-item {
+    background: var(--body-bg);
+    padding: 10px;
+    margin: 10px 0 0 0;
+
+}
+
+.wrapper-faded {
+    opacity: 0.08;
+}
+
+#highlighted-image {
+    width: 90%;
+}
+
+#highlighted-image img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding-left: 5%;
+    width: 90%;
+
+}
+
+.highlighted-image-active {
+    display: inline-block;
+    visibility: visible;
+    animation: fadeIn 0.2s linear;
+    animation-fill-mode: forwards;
+}
+
+.highlighted-image-inactive {
+    display: none;
+    visibility: hidden;
+    animation: fadeIn 0.1s linear;
+    animation-fill-mode: backwards;
+}
+
+.header {
+    background-color: var(--content-bg);
+}
+
+.sub-header {
+    background-color: var(--content-sub-bg);
+}
